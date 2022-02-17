@@ -76,41 +76,27 @@ class Front {
 	start(){
 		const ctx = document.getElementById('myChart');
 		let data = {
-			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			labels: ['05:30', '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00'],
 			datasets: [{
-				label: '# of Votes',
-				data: [12, 19, 3, 5, 2, 3],
+				label: 'CPU %',
+				data: [38, 50, 55, 40, 60, 75, 85, 75, 90, 80, 60, 40],
 				backgroundColor: [
-					'rgba(255, 99, 132, 0.2)',
-					'rgba(54, 162, 235, 0.2)',
-					'rgba(255, 206, 86, 0.2)',
-					'rgba(75, 192, 192, 0.2)',
-					'rgba(153, 102, 255, 0.2)',
-					'rgba(255, 159, 64, 0.2)'
+					'rgba(70, 132, 226, 1)',
 				],
 				borderColor: [
-					'rgba(255, 99, 132, 1)',
-					'rgba(54, 162, 235, 1)',
-					'rgba(255, 206, 86, 1)',
-					'rgba(75, 192, 192, 1)',
-					'rgba(153, 102, 255, 1)',
-					'rgba(255, 159, 64, 1)'
+					'rgba(70, 132, 226, 1)',
 				],
-				borderWidth: 1
+				borderWidth: 4
 			}]
 		}
-		const config = {
+		const myChart = new Chart(ctx, {
 			type: 'line',
 			data: data,
-		};
-		const myChart = new Chart(ctx, {
-			type: 'bar',
-			config: config,
-			data: data,
 			options: {
+				borderJoinStyle: 'round',
 				scales: {
 					y: {
-						beginAtZero: true
+						beginAtZero: false
 					}
 				}
 			}
